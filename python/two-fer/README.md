@@ -1,11 +1,29 @@
-# Reverse String
+# Two Fer
 
-Reverse a string
+`Two-fer` or `2-fer` is short for two for one. One for you and one for me.
 
-For example:
-input: "cool"
-output: "looc"
+Given a name, return a string with the message:
 
+```text
+One for X, one for me.
+```
+
+Where X is the given name.
+
+However, if the name is missing, return the string:
+
+```text
+One for you, one for me.
+```
+
+Here are some examples:
+
+|Name    |String to return
+|:-------|:------------------
+|Alice   |One for Alice, one for me.
+|Bob     |One for Bob, one for me.
+|        |One for you, one for me.
+|Zaphod  |One for Zaphod, one for me.
 
 ## Exception messages
 
@@ -23,10 +41,10 @@ raise Exception("Meaningful message indicating the source of the error")
 
 ## Running the tests
 
-To run the tests, run `pytest reverse_string_test.py`
+To run the tests, run `pytest two_fer_test.py`
 
 Alternatively, you can tell Python to run the pytest module:
-`python -m pytest reverse_string_test.py`
+`python -m pytest two_fer_test.py`
 
 ### Common `pytest` options
 
@@ -38,7 +56,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/reverse-string` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/two-fer` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
@@ -47,7 +65,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Introductory challenge to reverse an input string [https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb](https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb)
+[https://github.com/exercism/problem-specifications/issues/757](https://github.com/exercism/problem-specifications/issues/757)
 
 ## Submitting Incomplete Solutions
 
