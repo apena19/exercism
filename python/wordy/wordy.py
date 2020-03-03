@@ -1,35 +1,17 @@
-def es_numero(n):
-    try:
-        int(n)
-    except ValueError:
-        if n == "+" or n == "-" or n == "*" or n == "/":
-            return True
-        else:
-            return False
-    return True
-
-
-def error(question):
-    return question.find("cubed")
-
+operators = {'plus': '+', 'minus': '-', 'multiplied by': '*', 'divided by': '/'}
 
 def answer(question):
-    if error(question) < 0:
-        res = question.replace("plus", "+")
-        res = res.replace("minus", "-")
-        res = res.replace("multiplied by", "*")
-        res = res.replace("divided by", "/")
-        li = []
-        for n in res:
-            if es_numero(n):
-                li.append(n)
-        oper = ''
-        print(li)
-        for c in li:
-            oper += c
-        print(oper)
-        return int(eval(oper))
-    else:
-        raise ValueError(".+")
-        
-print(answer("What is 2 2 minus 3?"))
+    question = question[8:-1]
+    if question == '':
+        raise ValueError('Error')
+    for keys, values in operators.items():
+        question = question.replace(keys, values)
+    expression = question.split()
+    try:
+        if len(expression) % 2 == 0:  
+            raise ValueError('Error')
+        while len(expression) >= 3:
+            expression[:3] = [str(eval(' '.join(expression[:3])))]
+        return eval(expression[0])
+    except (SyntaxError, NameError):
+        raise ValueError('Error')  
